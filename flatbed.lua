@@ -239,7 +239,7 @@ Citizen.CreateThread(function()
                             else
                                 local bedPos = GetEntityCoords(bed, false)
                                 local newCar = getVehicleInDirection(bedPos + vector3(0.0, 0.0, 0.25), bedPos + vector3(0.0, 0.0, 2.25))
-                                if newCar then
+                                if newCar ~= 0 then
                                     local carPos = GetEntityCoords(newCar, false)
 				    NetworkRequestControlOfEntity(newCar)
 				    while not NetworkHasControlOfEntity(newCar) do Wait(0) end
